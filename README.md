@@ -74,3 +74,38 @@ cursorに流してみると次のようになる.(cursorくんは非常に優秀
 ```
 とりあえずpackageと関数一つはmainにしようという話.
 
+# 実際にテストをしよう
+まずテストプログラムにはいくつかのルールがある.
+
+* xxx_test.goのような名前のファイルにある必要があります。
+* テスト関数はTestという単語で始まる必要があります。
+* テスト関数はt *testing.Tの引数のみをとります。
+* *testing.T 型を使うには、他のファイルの fmt と同じように import "testing" が必要です。
+
+### テストファイルの作成
+テストファイル名は基本的に`xxx_test.go`である必要がある.
+
+今回作成する名前は`hello_test.go`という名前になる.
+
+### プログラムを書く.
+
+```Go
+package main
+
+import "testing"
+
+func TestHello(t *testing.T) {
+  got := Hello()
+  want := "Hello world"
+
+  if got != want {
+    t.Errorf("got %q want %q", got, want)
+  }
+}
+```
+まずテストファイルは基本的に`import "testing"`が必要である.
+
+また関数名はTestから始まらなければならないので`func TestHello(t *testing.T)`を宣言.
+
+なかの引数は`testing.Tタイプ`の`t`となる.これは任意ではないので注意.
+
