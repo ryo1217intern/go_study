@@ -109,3 +109,7 @@ func TestHello(t *testing.T) {
 
 なかの引数は`testing.Tタイプ`の`t`となる.これは任意ではないので注意.
 
+`got`を出力する関数. `want`を正しい結果とする.
+
+`if got != want`によって比較することによってErrorfを出力する.
+
