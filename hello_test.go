@@ -12,14 +12,14 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("名前が入った時", func(t *testing.T) {
-		got := Hello("ryo")
-		want := "Hello ryo"
+		got := Hello("ryo", "japanese")
+		want := "こんにちは,ryo"
 		assertCorrectMessage(t, got, want)
 	})
 
 	t.Run("名前が空のとき", func(t *testing.T) {
-		got := Hello("")
-		want := "Hello world"
+		got := Hello("", "")
+		want := "Hello,world"
 		assertCorrectMessage(t, got, want)
 	})
 
