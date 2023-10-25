@@ -4,8 +4,6 @@ import (
 	"fmt"
 )
 
-const helloText = "Hello "
-
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "world"
@@ -16,7 +14,7 @@ func Hello(name string, language string) string {
 func HelloText(language string) (prefix string) {
 	switch language {
 	case "japanese":
-		prefix = "こんにちは、"
+		prefix = "こんにちは,"
 	case "english":
 		prefix = "Hello,"
 	case "spanish":
